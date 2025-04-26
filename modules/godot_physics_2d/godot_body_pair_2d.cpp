@@ -240,7 +240,7 @@ bool GodotBodyPair2D::_test_ccd(real_t p_step, GodotBody2D *p_A, int p_shape_A, 
 }
 
 real_t combine_bounce(GodotBody2D *A, GodotBody2D *B) {
-	return CLAMP(A->get_bounce() + B->get_bounce(), 0, 1);
+	return A->get_bounce() * B->get_bounce();
 }
 
 real_t combine_friction(GodotBody2D *A, GodotBody2D *B) {
